@@ -1,3 +1,72 @@
+# job-finder
+
+#Combined Redux Store Setup:
+Integrates stores and reducers for authentication, job data, and form data using Redux Toolkit's configureStore.
+
+#store.js:
+Configures the Redux store using Redux Toolkit's configureStore.
+Combines reducers from auth, job, and form slices into one root reducer.
+The resulting store is ready to be used across the application.
+
+#authStore.js:
+Manages user authentication state.
+Initializes token, email, and login status from local storage.
+Provides actions like login and logout to update authentication status and local storage.
+
+#formStore.js:
+Manages form data state.
+Initializes fields for name, email, cover letter, and resume.
+Defines actions to updateFormData with new values and resetFormData to clear the form.
+
+#jobStore.js:
+Manages job-related state.
+Holds an array of job listings and a selected job.
+Provides actions to setJobs with a list of jobs and selectJob to set a specific job.
+
+#App.js:
+Sets up the main component with client-side routing using React Router.
+Includes header, routes for landing, jobs, job details, application form, and success page.
+Manages selected programming language state and passes it to the job listing component.
+
+#LandingPage.js:
+Serves as the landing page for the job search portal.
+Allows users to input a programming language and submit a search request.
+Sets the selected language and navigates to the "Jobs" page upon submission.
+
+#LoginSignIn.js:
+Manages user login and sign-up functionality.
+Provides input fields for email and password, or confirmation password for sign-up.
+Allows users to switch between login and sign-up forms.
+Sends requests to an authentication API for login or sign-up, dispatching Redux actions upon success.
+
+#Header.js:
+Displays the site header with title and navigation links.
+Utilizes Redux for user login status.
+Offers links for "Landing," "Jobs," and a "Logout" button which dispatches a logout action.
+
+#JobListings.js:
+Lists job postings based on a chosen programming language.
+Fetches job data from an external API and stores it in Redux.
+Each listing displays job title, company, and a button to view details.
+
+#JobDetails.js:
+Presents details of a selected job.
+Retrieves job information based on the jobId from the Redux store.
+Displays job title, company, location, salary, and description. Provides a button to navigate to the application form.
+
+#ApplicationForm.js:
+Represents a job application form.
+Uses Redux for form data management (name, email, cover letter, and resume).
+Handles form submission with handleSubmit, dispatching data to Redux, and setting formSubmitted flag.
+
+#SuccessPage.js:
+Displays a success message and submitted application data.
+Retrieves application data from the Redux store, showing name, email, cover letter, and optionally the submitted resume file.
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
