@@ -1,5 +1,7 @@
 # job-finder
 
+// One thing I haven't mentioned is that on the login page, if you are a first-time user, you need to first sign up with your email, password, and confirm the password. After that, you can switch to the login page and enter your login email and password. Doing so will then take you to the app.
+
 #Combined Redux Store Setup:
 Integrates stores and reducers for authentication, job data, and form data using Redux Toolkit's configureStore.
 
